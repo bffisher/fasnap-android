@@ -1,4 +1,4 @@
-package bffisher.fasnap
+package bffisher.fasnap.home
 
 import android.content.Context
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import bffisher.fasnap.R
 import bffisher.fasnap.edit.OnFragmentInteractionListener
 
 
@@ -14,12 +15,10 @@ import bffisher.fasnap.edit.OnFragmentInteractionListener
  * Activities that contain this fragment must implement the
  * [OnFragmentInteractionListener] interface
  * to handle interaction events.
- * Use the [HomeFragment.newInstance] factory method to
+ * Use the [Main.newInstance] factory method to
  * create an instance of this fragment.
  */
-class HomeFragment : Fragment() {
-    private var mListener: OnFragmentInteractionListener? = null
-
+class Main : Fragment() {
 //    override fun onCreate(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
 //    }
@@ -30,19 +29,19 @@ class HomeFragment : Fragment() {
         return inflater.inflate(R.layout.home_main, container, false)
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
-            mListener = context
-        } else {
-            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener") as Throwable
-        }
-    }
+//    override fun onAttach(context: Context) {
+//        super.onAttach(context)
+//        if (context is OnFragmentInteractionListener) {
+//            mListener = context
+//        } else {
+//            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+//        }
+//    }
 
-    override fun onDetach() {
-        super.onDetach()
-        mListener = null
-    }
+//    override fun onDetach() {
+//        super.onDetach()
+//        mListener = null
+//    }
 
     companion object {
 
@@ -50,10 +49,10 @@ class HomeFragment : Fragment() {
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.
          *
-         * @return A new instance of fragment HomeFragment.
+         * @return A new instance of fragment Main.
          */
-        fun newInstance(): HomeFragment {
-            return HomeFragment()
+        fun newInstance(): Main {
+            return Main()
         }
     }
 

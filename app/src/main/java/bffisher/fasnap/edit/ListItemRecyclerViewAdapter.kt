@@ -7,14 +7,13 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.TextView
 import bffisher.fasnap.R
-
-import bffisher.fasnap.dummy.DummyContent.DummyItem
+import bffisher.fasnap.entity.SnapshotEntity
 
 /**
- * [RecyclerView.Adapter] that can display a [DummyItem] and makes a call to the
+ * [RecyclerView.Adapter] that can display a [SnapshotEntity] and makes a call to the
  * specified [AdapterView.OnItemClickListener].
  */
-class ListItemRecyclerViewAdapter(private val mValues: List<DummyItem>, private val mListener: AdapterView.OnItemClickListener?) : RecyclerView.Adapter<ListItemRecyclerViewAdapter.ViewHolder>() {
+class ListItemRecyclerViewAdapter(private val mValues: List<SnapshotEntity>, private val mListener: AdapterView.OnItemClickListener?) : RecyclerView.Adapter<ListItemRecyclerViewAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -24,7 +23,7 @@ class ListItemRecyclerViewAdapter(private val mValues: List<DummyItem>, private 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.mItem = mValues[position]
-        holder.mNameView.text = mValues[position].name
+        holder.mNameView.text = mValues[position].date
         holder.mAmountView.text = mValues[position].amount.toString()
 
         holder.mView.setOnClickListener {
@@ -39,7 +38,7 @@ class ListItemRecyclerViewAdapter(private val mValues: List<DummyItem>, private 
     inner class ViewHolder(val mView: View) : RecyclerView.ViewHolder(mView) {
         val mNameView: TextView = mView.findViewById<View>(R.id.list_item_name) as TextView
         val mAmountView: TextView = mView.findViewById<View>(R.id.list_item_amount) as TextView
-        var mItem: DummyItem? = null
+        var mItem: SnapshotEntity? = null
 
         override fun toString(): String {
             return super.toString() + " '" + mAmountView.text + "'"

@@ -1,24 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="bffisher.fasnap.edit.ListFragment"
-    android:id="@+id/fragment_edit"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="bffisher.fasnap.edit.SnapshotDetail">
+
+    <include
+        android:id="@+id/edit_snapshot_detail_header"
+        layout="@layout/edit_header"/>
+
     <Button
-        android:id="@+id/fragment_edit_add_button"
+        android:id="@+id/edit_snapshot_detail_add_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:text="@string/button_add" />
 
     <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/fragment_edit_list"
+        android:id="@+id/edit_snapshot_detail_list"
         android:name="bffisher.fasnap.EditListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -30,4 +33,3 @@
         tools:context="bffisher.fasnap.edit.EditListView"
         tools:listitem="@layout/edit_list_item" />
 </LinearLayout>
-
